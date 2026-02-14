@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Smart Study Companion</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+  <!-- ✅ Reload / Refresh Loader -->
+  <div id="pageLoader" class="page-loader" aria-hidden="true">
+    <div class="loader-card">
+      <div class="loader-badge">SSC</div>
+      <div class="loader-title">Smart Study Companion</div>
+      <div class="loader-sub">Loading chats & preparing workspace…</div>
+
+      <div class="loader-bar">
+        <div id="loaderBarFill" class="loader-bar-fill"></div>
+      </div>
+
+      <div class="loader-dots" aria-label="loading">
+        <span></span><span></span><span></span>
+      </div>
+
+      <div class="loader-foot">Local • Private • Fast</div>
+    </div>
+  </div>
+
+  <!-- Background -->
+  <div class="bg">
+    <div class="bg-glow"></div>
+    <div class="bg-grid"></div>
+    <div class="bg-noise"></div>
+  </div>
+
+  <div class="shell app-enter">
+    <aside class="sidebar">
+      <div class="brand">
+        <div class="logo">SSC</div>
+        <div class="brand-text">
+          <div class="title">Smart Study Companion</div>
+          <div class="subtitle">Unlimited Local PDF Q&A</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Chats</div>
+        <div class="chat-actions">
+          <button id="newChat" class="btn btn-wide">+ New Chat</button>
+        </div>
+        <div id="sessionList" class="session-list">
+          <div class="hint">Loading chats…</div>
+        </div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">Upload (this chat)</div>
+        <label class="dropzone" for="pdfs" id="dropzone">
+          <div class="dz-row">
+            <div class="dz-badge">PDF</div>
+            <div class="dz-text">
+              <div class="dz-title">Drop files here</div>
+              <div class="dz-sub">or click to choose multiple PDFs</div>
+            </div>
+          </div>
+          <input type="file" id="pdfs" multiple accept=".pdf" />
+          <div class="dz-foot">Tip: Upload different PDFs per chat.</div>
+        </label>
+
+        <button id="upload" class="btn btn-wide">Upload PDFs</button>
+        <div class="small-hint">Each chat keeps its own PDFs.</div>
+      </div>
+
+      <div class="panel">
+        <div class="panel-title">PDFs in this chat</div>
+        <div id="pdfList" class="pdf-list">
+          <div class="hint">Upload PDFs to see them here.</div>
+        </div>
+      </div>
+
+      <!-- ✅ UPDATED: Social Panel (now 3 buttons) -->
+      <div class="panel social">
+        <a class="social-btn" href="https://www.linkedin.com/in/mohammed-zuoriki-856133250/" target="_blank" rel="noreferrer">
+          <span class="social-icon">in</span>
+          <span class="social-title">LinkedIn</span>
+          <span class="social-arrow">↗</span>
+        </a>
+
+        <a class="social-btn" href="https://github.com/Code-tech77" target="_blank" rel="noreferrer">
+          <span class="social-icon">{ }</span>
+          <span class="social-title">GitHub</span>
+          <span class="social-arrow">↗</span>
+        </a>
+
+        <!-- ✅ NEW BUTTON -->
+        <a class="social-btn social-btn-wide" href="https://solo.to/cybertutor" target="_blank" rel="noreferrer">
+          <span class="social-icon">★</span>
+          <span class="social-title">Personal Services</span>
+          <span class="social-arrow">↗</span>
+        </a>
+      </div>
+    </aside>
+
+    <main class="main">
+      <div class="topbar">
+        <div class="topbar-left">
+          <div id="activeChatName" class="topbar-title">Chat</div>
+          <div id="activeChatMeta" class="topbar-meta">—</div>
+        </div>
+        <div class="topbar-right">
+          <button id="clearChat" class="ghost-btn" type="button">Clear view</button>
+        </div>
+      </div>
+
+      <div class="chat-head">
+        <div class="chat-title">Chat</div>
+        <div class="chat-mini">History is saved per chat session (while server runs).</div>
+      </div>
+
+      <div id="chat" class="chat"></div>
+
+      <div class="composer">
+        <input id="input" class="composer-input" placeholder="Ask a question… (Enter to send)" />
+        <button id="send" class="btn">Send</button>
+      </div>
+    </main>
+  </div>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
