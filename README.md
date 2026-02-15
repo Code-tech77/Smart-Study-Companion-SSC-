@@ -102,7 +102,6 @@ pip install flask pymupdf scikit-learn
 Mohammed Zuoriki
 Cybersecurity Student | Aspiring Cloud Security Architect
 <br> LinkedIn: https://www.linkedin.com/in/mohammed-zuoriki-856133250/
-<br> GitHub: https://github.com/Code-tech77
 
 ⸻
 
